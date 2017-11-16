@@ -12,21 +12,22 @@ class MyLabel : public QLabel
 {
     Q_OBJECT
 private:
-    int type;
+    QString _styleSheetHover;
+    QString _styleSheet;
 
 public:
     MyLabel(QWidget * parent = 0 );
     ~MyLabel(){}
-
-    void setType(int type);
+    void setStyleSheetHover(QString style);
 signals:
     void clicked();
-
-public slots:
-    void slotClicked();
+    void mouseHover(bool isHover);
 
 protected:
     void mousePressEvent ( QMouseEvent * event ) ;
+    void enterEvent(QEvent* event);
+    void leaveEvent(QEvent* event);
+
 
 };
 
