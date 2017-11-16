@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QtWebKit/QWebView>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -16,5 +17,9 @@ MainWindow::~MainWindow()
 
 void MainWindow::init_Interface(QWidget *widgetMain)
 {
-    moduleGui.init_Interface(widgetMain);
+    QWebView *view = new QWebView(widgetMain);
+    view->show();
+    view->load(QUrl("http://google.com"));
+
+//    moduleGui.init_Interface(widgetMain);
 }
