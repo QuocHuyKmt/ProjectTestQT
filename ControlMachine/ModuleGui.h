@@ -16,7 +16,7 @@
 #include <QCommandLinkButton>
 #include <mylabel.h>
 #include <QObject>
-
+#include <QTableWidget>
 class ModuleGui: public QObject
 
 {
@@ -46,6 +46,9 @@ public:
     MyLabel *label4;
     MyLabel *label5;
     MyLabel *label6;
+    MyLabel *label7;
+
+    QTableWidget *tableWidget;
 
 private:
     void init_Module_Control();

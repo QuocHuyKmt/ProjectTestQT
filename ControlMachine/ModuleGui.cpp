@@ -62,6 +62,7 @@ void ModuleGui::init_Interface(QWidget *widget)
 
     init_Module_Control();
     init_Module_Title();
+    init_Module_Main();
 }
 
 void ModuleGui::init_Module_Title()
@@ -195,6 +196,37 @@ void ModuleGui::init_Module_Control()
 
 void ModuleGui::init_Module_Main()
 {
+
+    tableWidget = new QTableWidget(this->frame_Main);
+    if (tableWidget->columnCount() < 7)
+        tableWidget->setColumnCount(7);
+    if (tableWidget->rowCount() < 10)
+        tableWidget->setRowCount(10);
+    tableWidget->setObjectName(QString::fromUtf8("tableWidget"));
+    tableWidget->setRowCount(10);
+    tableWidget->setColumnCount(7);
+
+    this->label7 = new MyLabel(this->frame_Title);
+    this->label7->setObjectName(QString::fromUtf8("label7"));
+    this->label7->setMinimumSize(50, 35);
+    this->label7->setAlignment(Qt::AlignCenter);
+    this->label7->setText("This is table config machine");
+    label7->setStyleSheet("QLabel {"
+                          "background-color:"
+                          "qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,"
+                          "stop:0 rgba(60, 186, 162, 255),"
+                          "stop:1 rgba(98, 211, 162, 255))}"
+                          "QLabel:disabled {"
+                          "background-color: rgb(170, 170, 127)}");
+    label7->setStyleSheetHover("QLabel {"
+                               "background-color:"
+                               "qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,"
+                               "stop:0 rgba(60, 186, 162, 255),"
+                               "stop:1 rgba(0, 122, 162, 255))}");
+
+
+    this->gridLayout_Main->addWidget(label7,1,1,2,1);
+    this->gridLayout_Main->addWidget(tableWidget,4,1,6,1);
 
 }
 

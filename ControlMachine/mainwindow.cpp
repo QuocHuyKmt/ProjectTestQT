@@ -17,9 +17,9 @@ MainWindow::~MainWindow()
 
 void MainWindow::init_Interface(QWidget *widgetMain)
 {
-    QWebView *view = new QWebView(widgetMain);
-    view->show();
-    view->load(QUrl("http://google.com"));
+//    QWebView *view = new QWebView(widgetMain);
+//    view->show();
+//    view->load(QUrl("http://google.com"));
 
-//    moduleGui.init_Interface(widgetMain);
+    moduleGui.init_Interface(widgetMain);
 }
